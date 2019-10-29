@@ -1,0 +1,21 @@
+body {
+  background-color: skyblue;
+}
+
+#main-container {
+  padding: 10px;
+}
+
+#sourcesList{
+  margin-bottom: 10px;
+  height: 148px;
+  overflow: overlay;
+}
+
+
+@media (min-width: 992px){
+  #sourcesList{
+    height: 100%;
+    overflow: auto;
+  }
+}
