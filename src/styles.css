@@ -8,7 +8,7 @@ body {
 
 #sourcesList{
   margin-bottom: 10px;
-  height: 148px;
+  height: calc(49px * 5);
   overflow: overlay;
 }
 
