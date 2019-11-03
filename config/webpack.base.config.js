@@ -29,7 +29,7 @@ module.exports = env => {
                     "@babel/preset-env",
                     {
                       targets: {
-                        node: 6.5
+                        chrome: "54"
                       }
                     }
                   ]
@@ -49,14 +49,14 @@ module.exports = env => {
         ]
       },
       plugins: [
+        new CopyWebpackPlugin([{ from: "src/assets" }]),
         new HtmlWebpackPlugin({
           template: "./src/index.html",
           filename: "./index.html"
         }),
         new webpack.DefinePlugin({
-          "process.env.MODE": JSON.stringify(env.MODE),          
-        }),
-        new CopyWebpackPlugin([{ from: "src/assets" }])
+          "process.env.MODE": JSON.stringify(env.MODE)
+        })
       ]
     }
   ]);

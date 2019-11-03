@@ -1,3 +1,7 @@
+:root {
+  --sources-list-md-row-count: 5;
+}
+
 body {
   background-color: skyblue;
 }
@@ -6,15 +10,14 @@ body {
   padding: 10px;
 }
 
-#sourcesList{
+#sources-list{
   margin-bottom: 10px;
-  height: calc(49px * 5);
+  height: calc(49px * var(--sources-list-md-row-count));
   overflow: overlay;
 }
 
-
 @media (min-width: 992px){
-  #sourcesList{
+  #sources-list{
     height: 100%;
     overflow: auto;
   }

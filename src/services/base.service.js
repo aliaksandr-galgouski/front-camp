@@ -1,23 +1,24 @@
 export class ApiService {
   async get(url, options) {
     try {
-      //throw new Error();
-      let response = await fetch(url, options);
-      
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+
       return await response.json();
-    } catch (err) {
-      console.error(err); 
-      return {};     
+    } catch (e) {
+      console.error(e.message);
     }
   }
 }
 
 export class RequestOptions {
-  constructor(){
-    this.headers = { };
+  constructor() {
+    this.headers = {};
   }
 
-  setHeader(headerName,headerValue){
-    this.headers[headerName] = headerValue;
+  setHeader(name, value) {
+    this.headers[name] = value;
   }
 }
