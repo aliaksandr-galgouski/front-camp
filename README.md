@@ -1,25 +1,10 @@
-# Module 1 JavaScript Core: ES7 + Babel + Webpack
+# Module 2 Design Patterns
 
 ## Task: 
 
-* Go to https://newsapi.org/
-	* Press ‘Get API Key’ on the right
-	* Enter your desired creds and promise to add an attribution link to NewsAPI
-	* Press submit and store your API key - this one will be used for API requests
-	* Test you did well - https://newsapi.org/v1/articles?source={{CHANEL_CODE}}&apiKey={{YOUR_API_KEY}}
-* 
-* Create an application that uses NewsAPI, which will run purely on the client-side in latest Chrome
-	* Use
-		* ES6 knowledge
-		* Each part of logic should be in a separate file. (ES6 modules)
-		* Use Browser-side (no server-side work expected).
-		* Use async/await with fetch
-		* Use Webpack:
-		* Use Babel as a loader.
-			* style and url loaders. (Sass/less/stylus, autoprefixer optional)		
-			* plugins
-	* Configure the bundler for development and production mode.
-	* Configure Webpack-dev-server	
-* Your app should provide possibility for a user to select a particular news channel and list any number of latest records.
-* You're **not allowed to use any framework**
-* Publish application, using your GitHub page on your GitHub account: https://pages.github.com/
+Within the project from previous module need add:
+* Lazy Initialization - error handling handlers from the server (too many results, page size or other exceptions);
+* Singleton - error handler popup should be organized as singleton;
+* Factory - necessary to implement a layer/factory responsible for requests to the server with GET, POST, PUT, etc methods;
+* Proxy - necessary to implement a proxy layer above the factory, which would log all kinds of requests and transmitted parameters;
+* Organize all code using MV_ Pattern.
