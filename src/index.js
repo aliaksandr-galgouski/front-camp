@@ -5,4 +5,4 @@ import App from "./app";
 console.log("Enviroment:", process.env.MODE.toUpperCase());
 String.empty = "";
 
-window.onload = () => new App().init();
+window.onload = new App().init();

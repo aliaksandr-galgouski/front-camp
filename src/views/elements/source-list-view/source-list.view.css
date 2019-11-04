@@ -1,0 +1,15 @@
+:root {
+  --list-group-md-row-count: 5;
+}
+.list-group{
+  margin-bottom: 10px;
+  height: calc(49px * var(--list-group-md-row-count));
+  overflow: overlay;
+}
+
+@media (min-width: 992px){
+  .list-group{
+    height: 100%;
+    overflow: auto;
+  }
+}
