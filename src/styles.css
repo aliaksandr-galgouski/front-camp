@@ -1,24 +1,7 @@
-:root {
-  --sources-list-md-row-count: 5;
-}
-
 body {
   background-color: skyblue;
 }
 
 #main-container {
-  padding: 10px;
-}
-
-#sources-list{
-  margin-bottom: 10px;
-  height: calc(49px * var(--sources-list-md-row-count));
-  overflow: overlay;
-}
-
-@media (min-width: 992px){
-  #sources-list{
-    height: 100%;
-    overflow: auto;
-  }
+  padding: 10px 15px;
 }

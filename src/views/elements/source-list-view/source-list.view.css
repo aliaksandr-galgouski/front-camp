@@ -1,0 +1,22 @@
+:root {
+  --list-group-md-row-count: 5;
+}
+.list-group{
+  margin-bottom: 10px;
+  height: calc(49px * var(--list-group-md-row-count));
+  overflow: overlay;
+}
+
+@media (min-width: 992px){
+  .list-group{
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.list-group-item:target {
+  z-index: 2;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
