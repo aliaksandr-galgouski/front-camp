@@ -9,8 +9,6 @@ import NewsApiService from "./services/news-api.service";
 const API_KEY = "cd77286a82d24223b1320716435aacb6";
 
 export default class App {
-  constructor() {}
-
   async init() {
     const $mainContainer = $("#main-container");
     const view = new NewsPageView($mainContainer);

@@ -2,10 +2,6 @@ import $ from "jquery";
 import ListView from "../base.list.view";
 
 export default class NewsListView extends ListView {
-  constructor(itemView) {
-    super(itemView);
-  }
-
   createContainer(model) {
     return $(`<div class="card-columns"></div>`);
   }

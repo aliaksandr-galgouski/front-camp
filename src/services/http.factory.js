@@ -1,15 +1,15 @@
 import TraceInterceptor from "../interceptors/trace.interceptor";
 
 const DEFAULT_HEADERS = {
-  "Accept": "application/json"
+  Accept: "application/json"
 };
 
 function doRequest(method, url, headers, body) {
-  let init = {};
+  const init = {};
   init.url = url;
   init.body = body;
   init.method = method;
-  init.headers = Object.assign({}, DEFAULT_HEADERS, headers);
+  init.headers = { ...DEFAULT_HEADERS, ...headers };
 
   return fetch(url, init);
 }

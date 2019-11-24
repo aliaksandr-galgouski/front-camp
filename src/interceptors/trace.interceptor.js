@@ -1,12 +1,12 @@
-const handler = {    
+const handler = {
   get(target, propKey, receiver) {
-    const origMethod = target[propKey];
+    const originalMethod = target[propKey];
 
     return function(...args) {
       console.debug("Invoked", propKey);
       console.debug("With arguments:", args);
 
-      let result = origMethod.apply(this, args);
+      const result = originalMethod.apply(this, args);
 
       console.debug("Result:" + JSON.stringify(result));
       return result;

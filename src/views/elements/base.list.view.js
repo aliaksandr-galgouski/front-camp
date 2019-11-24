@@ -2,23 +2,13 @@ import $ from "jquery";
 import View from "../base.view";
 
 export default class ListView extends View {
-  constructor($parent) {
-    super($parent);
-  }
-
-  render(model) {
+  render(model = []) {
     this.clearParent();
     const $container = this.createContainer(model);
 
-    $container.on(
-      "click",
-      "> *",
-      function(e) {
-        this.emit("itemClicked", e.currentTarget);
-      }.bind(this)
-    );
+    $container.on("click", "> *", event => this.emit("itemClicked", event));
 
-    (model || []).forEach(itemModel => this.renderItem($container, itemModel));
+    model.forEach(itemModel => this.renderItem($container, itemModel));
 
     this.$parent.append($container);
   }

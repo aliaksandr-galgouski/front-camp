@@ -12,7 +12,7 @@ function createHeaders(apiKey) {
 async function handleErrors(request) {
   try {
     const response = await request;
-    if(response.status !== 200){
+    if (response.status !== 200) {
       throw Error(json.statusMessage);
     }
 

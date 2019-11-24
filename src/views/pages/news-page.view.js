@@ -4,10 +4,6 @@ import NewsListView from "./../elements/news-list-view/news-list.view";
 import SourceListView from "./../elements/source-list-view/source-list.view";
 
 export default class NewsPageView extends View {
-  constructor($parent) {
-    super($parent);
-  }
-
   render(model) {
     const $newsContainer = $(`<div class="col-lg-8 col-xl-9"></div>`);
     const $sourcesContainer = $(`<div class="col-lg-4 col-xl-3"></div>`);

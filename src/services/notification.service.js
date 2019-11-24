@@ -1,9 +1,9 @@
 import "bootstrap/js/dist/alert";
 import $ from "jquery";
 
-export default class NotificationService {
+class NotificationService {
   constructor() {
-    this.$body = $("#main-container");
+    this.$body = $("body");
   }
 
   showError(message) {
@@ -18,4 +18,5 @@ export default class NotificationService {
     this.$body.append(html);
   }
 }
-NotificationService.instance = new NotificationService();
+
+export default new NotificationService();

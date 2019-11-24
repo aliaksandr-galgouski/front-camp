@@ -13,3 +13,10 @@
     overflow: auto;
   }
 }
+
+.list-group-item:target {
+  z-index: 2;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}

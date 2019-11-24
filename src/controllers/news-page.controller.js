@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 export default class NewsPageController {
   constructor(newsView, newsModel) {
     this.view = newsView;
@@ -7,13 +5,15 @@ export default class NewsPageController {
   }
 
   async init() {
-    this.view.render(this.model);    
-    this.view.sourcesListView.on("itemClicked", e => this.onSourceClick(e));
+    this.view.render(this.model);
+    this.view.sourcesListView.on("itemClicked", event =>
+      this.onSourceClick(event)
+    );
 
     await this.model.init();
   }
 
-  onSourceClick(element) {
-    this.model.sourceId = element.id;
+  onSourceClick(event) {
+    this.model.sourceId = event.currentTarget.id;
   }
 }

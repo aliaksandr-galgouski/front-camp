@@ -8,6 +8,6 @@ export default class View extends EventEmiter {
 
   render(model) {}
   clearParent() {
-    this.$parent.html(String.empty);
+    this.$parent.html("");
   }
 }
