@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "39b0e41b-6921-4b7f-a9ef-4f0d262f8bd9",
+		"name": "NodeJs Express requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9000/api/news/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/api/news/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"news",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/api/news/0",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/api/news/0",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"news",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/api/news/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "cd77286a82d24223b1320716435aacb6",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "The First New",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Alexander can create News !!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/api/news/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"news",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/api/news/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "The First New",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Alexander can create News !!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/api/news/",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"news",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/api/news/?title=The First New (Updated)&content=Alexander can PUT News !!!",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "The First New",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Alexander can update News !!!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9000/api/news/0",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"news",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
