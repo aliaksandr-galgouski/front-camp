@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route, Link, useParams } from "react-router-dom"
 
 import { Block, Container, Label} from "components/common/layout";
-import { Button, ButtonGroup } from "components/common/inputs";
+import { Button } from "components/common/inputs";
 import {Logo, Toggler, MovieGrid } from "components/composite"
 
-import ErrorBoundary from './components/system/error-bondary/ErrorBoundary.component';
+import { ErrorBoundary } from 'components/system';
 
 const App = () => (
   <Router>
@@ -26,8 +26,7 @@ const App = () => (
 
         <Switch>
           <Route path="/home" component={HomePage}/>
-          <Route path="/search/:searchQuery?" component={SearchForm}/>
-          <Route path="/search/:searchQuery?" component={SearchForm}/>
+          <Route path="/search/:searchQuery?" component={SearchPage}/>
 
           <Redirect exact from='/' to='/home' />
           <Route component={NotFound}/>
@@ -46,32 +45,51 @@ export default App;
 
 const NotFound = () => (
   <Block>
-    <h1>Error</h1>
+    <h1>Error - NotFound</h1>
   </Block>
 )
 
 const HomePage = () => (
   <Block>    
-    <Block>
-      <h1>Home Page</h1>
+    <Block flex style={{justifyContent: "flex-end"}}>
+      <Block>
+        <Label text="Search By"/>
+        <Toggler options={["release date", "rating"]} onChange={ value => console.log("Sort:", value)} />
+      </Block>
     </Block>
     <MovieGrid movies={[]}/>
   </Block>  
 );
+
+const SearchPage = () => {
+  const message = `${7} movies was found`;
+  return (
+    <Block>    
+      <Block flex style={{justifyContent: "space-between"}}>
+        <Label text={message}/>
+        <Block>
+          <span>Search By</span>
+          <Toggler options={["release date", "rating"]} onChange={ value => console.log("Sort:", value)} />
+        </Block>
+      </Block>
+      <MovieGrid movies={[]}/>
+    </Block>
+  );
+}
 
 const SearchForm = () => {
   const { searchQuery } = useParams();
   return (
     <Block>
       <h1>Find your movie</h1>
-      <Block>
+      <Block tag="form">
         <input></input>
-        <Button label="Search"/>
+        <Button primary label="Search"/>
       </Block>
-      <div>
+      <Block>
         <span>Search By</span>
         <Toggler options={["title", "genre"]} onChange={ value => console.log("Search property:", value)} />
-      </div>
+      </Block>
     </Block>    
   );
 }
