@@ -1,6 +1,6 @@
 import React from "react";
 import Block from "components/common/layout/block/Block.component";
-import { mergeClasses } from "components/helpers/style.helper.js";
+import { mergeClasses } from "components/helpers/style.helper";
 
 import styles from "./ButtonGroup.module.scss";
 

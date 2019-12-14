@@ -1,5 +1,5 @@
 import React from "react";
-import { mergeClasses } from "components/helpers/style.helper.js";
+import { mergeClasses } from "components/helpers/style.helper";
 
 import styles from "./GridList.module.scss";
 

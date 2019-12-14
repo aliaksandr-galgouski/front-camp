@@ -1,9 +1,10 @@
 import React from "react";
-import { mergeClasses } from "components/helpers/style.helper.js";
+import { mergeClasses } from "components/helpers/style.helper";
 
 import styles from "./Label.module.scss";
 
-const Label = ({tag: Tag = "span", text = "", size, color, ...props}) => {
+const Label = ({tag = "span", text = "", size, color, ...props}) => {
+  const Tag = tag;
   const { className, style, children, ...restProps} = props;
   const classes = mergeClasses(styles.root, className);
 
@@ -13,7 +14,7 @@ const Label = ({tag: Tag = "span", text = "", size, color, ...props}) => {
   }
   if(color){
     newStyle["color"] = size;
-  }
+  }  
   
   return (
     <Tag className={classes} style={{...newStyle, ...style}} {...restProps} >

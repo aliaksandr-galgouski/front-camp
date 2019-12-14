@@ -1,9 +1,10 @@
 import React from "react";
-import { mergeClasses } from "components/helpers/style.helper.js";
+import { mergeClasses } from "components/helpers/style.helper";
 
 import styles from "./Block.module.scss";
 
-const Block = ({tag: Tag = "div", flex = false, inline = false, ...props}) => {
+const Block = ({tag = "div", flex = false, inline = false, ...props}) => {
+  const Tag = tag
   const { className, ...restProps} = props;
   const classes = mergeClasses(
     flex 

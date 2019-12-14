@@ -1,15 +1,18 @@
 import React from "react";
-import { Redirect, withRouter } from "react-router-dom"
+import { Redirect, withRouter } from "react-router-dom";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { };
-    this.props.history.listen(()=> this.setState({}));
+    this.state = { };    
   }
 
   static getDerivedStateFromError(error) { 
     return { error };
+  }
+
+  componentDidMount() {  
+    this.props.history.listen(()=> this.setState({}));
   }
 
   componentDidCatch(error, info) {  

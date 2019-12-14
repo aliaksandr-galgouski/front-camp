@@ -1,11 +1,10 @@
 import React from "react";
 import { Label } from "../../layout";
-import { mergeClasses } from "components/helpers/style.helper.js";
+import { mergeClasses } from "components/helpers/style.helper";
 
 import styles from "./Button.module.scss";
 
-
-const Button = ({label, primary = false, type = "button", size="medium", ...props}) => {
+const Button = ({label, primary = false, type = "button", size = "medium", ...props}) => {
   const { className, children, ...restProps} = props;   
   const classes = mergeClasses(styles.root, {  
     [styles.primaryColor]: primary,
