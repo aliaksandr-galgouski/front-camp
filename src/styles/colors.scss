@@ -1,0 +1,15 @@
+$red: #F65261;
+$green: #A1E66F;
+$gray: #555;
+$dark-gray: #424242;
+$black: #232323;
+$white: #fff;
+
+:export {
+  red: $red;
+  green: $green;
+  gray: $gray;
+  darkGray: $dark-gray;
+  white: $white;
+  black: $black;
+}

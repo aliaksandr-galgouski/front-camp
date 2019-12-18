@@ -1,0 +1,15 @@
+@import "styles/mixins.scss";
+
+.block{
+  display: block;
+}
+.flexBlock{
+  @include flex();
+}
+
+.inlineBlock{
+  @include inline-block();
+}
+.inlineFlexBlock{
+  @include inline-flex();
+}
