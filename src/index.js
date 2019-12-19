@@ -4,11 +4,12 @@ import {Provider} from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
-import rootReducer from "./reducers";
 
-import './styles/index.scss';
+import rootReducer from "reducers";
+import {ErrorBoundary} from "components/system";
+import App from "components/App";
 
-import App from './App';
+import "styles/index.css";
 
 const store = createStore(
   rootReducer,
@@ -16,10 +17,12 @@ const store = createStore(
 );
 
 render(
-  <Provider store={store}>
-    <Router >
-      <App />
-    </Router>    
+  <Provider store={store}>    
+    <Router>
+      <ErrorBoundary>
+        <App/>
+      </ErrorBoundary> 
+    </Router>      
   </Provider>,
   document.getElementById("root")
 );

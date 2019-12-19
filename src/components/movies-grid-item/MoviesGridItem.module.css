@@ -1,0 +1,18 @@
+.root {
+
+}
+
+.poster {
+  width: 100%;
+}
+
+.year {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px var(--white);
+}
+
+.titleBlock {
+  justify-content: space-between;
+}
+

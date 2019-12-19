@@ -5,7 +5,7 @@ export const sortByValues = {
   releaseDate: "release_date"
 };
 
-export const fetchAll = async (offset = 0, limit = 10, sortBy, search, searchBy) => {
+export const fetchAll = async (offset, limit, sortBy, search, searchBy) => {
   let query = `offset=${offset}&limit=${limit}`;
   if(sortBy)
   {
