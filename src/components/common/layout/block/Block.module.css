@@ -1,0 +1,21 @@
+.block{
+  display: block;
+}
+
+.flexBlock{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inlineBlock{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inlineFlexBlock{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
