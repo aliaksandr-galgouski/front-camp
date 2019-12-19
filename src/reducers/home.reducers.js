@@ -1,4 +1,4 @@
-import {SET_SORT_BY, FETCH_MOVIES_PENDING, FETCH_MOVIES_SUCCESS,FETCH_MOVIES_ERROR} from 'actions/home.actions';
+import {SET_SORT_BY, FETCH_MOVIES_PENDING, FETCH_MOVIES_SUCCESS,FETCH_MOVIES_ERROR} from 'containers/home';
 
 const initialState = {
   sortBy: "rating",
@@ -23,8 +23,3 @@ const moviesReducer = (state = initialState, action) => {
 };
 
 export default moviesReducer;
-
-export const getSortBy = state => state.home.sortBy;
-export const getMovies = state => state.home.movies;
-export const getMoviesPending = state => state.home.pending;
-export const getMoviesError = state => state.home.error;

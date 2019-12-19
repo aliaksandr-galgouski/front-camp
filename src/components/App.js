@@ -6,7 +6,7 @@ import {NotFound} from "components/common/system";
 import Header from "components/header";
 import Footer from "components/footer/index";
 
-import HomePage from "containers/HomePage";
+import Home from "containers/home";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <Header/>
 
       <Switch>
-        <Route path="/home" component={HomePage}/>
+        <Route path="/home" component={Home}/>
         {/* <Route path="/search/:searchQuery?" component={Search}/> */}
         <Redirect exact from="/" to="/home" />
         <Route component={NotFound}/>

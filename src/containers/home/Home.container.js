@@ -6,11 +6,10 @@ import { Block, Label } from "components/common/layout";
 import MovieGrid from "components/movies-grid";
 import ButtonToggler from "components/button-toggler";
 
-import {setSortBy, fetchMovies} from "actions/home.actions";
-import {getSortBy, getMovies, getMoviesPending, getMoviesError} from "reducers/home.reducers";
+import {setSortBy, fetchMovies} from "./Home.actions";
+import {getSortBy, getMovies, getMoviesPending, getMoviesError} from "./Home.selectors";
 
-
-class HomePage extends React.Component {
+class Home extends React.Component {
   constructor(props){
     super(props);
     this.toggleSortBy = this.toggleSortBy.bind(this);
@@ -59,4 +58,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage);
+)(Home);

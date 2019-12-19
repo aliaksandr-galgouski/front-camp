@@ -8,5 +8,3 @@ export default combineReducers({
   //search: searchReducer,  
   //movieDetail: movieDetailReducer,
 });
-
-
