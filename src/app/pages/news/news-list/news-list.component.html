@@ -1,0 +1,15 @@
+<ul *ngFor="let news of newsList">
+  <li>
+    <img>
+    <div class="content">
+      <div class="title">{{news.title}}</div>
+      <p>{{news.shortLines}}</p>
+      <a [routerLink]="[news.id]">Read more...</a>
+    </div>
+     
+    <div class="actions">
+      <a class="btn" [routerLink]="['edit', news.id]">Edit</a>
+      <button (click)="deleteNews(news)">Delete</button>
+    </div>
+  </li>
+</ul>

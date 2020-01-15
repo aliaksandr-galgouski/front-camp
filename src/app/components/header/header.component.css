@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+  border: solid 1px black;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0 15px;  
+  font-size: 24px;
+  font-weight: bold;
+
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.title:visited {
+  text-decoration: inherit;
+  color: inherit;
+}

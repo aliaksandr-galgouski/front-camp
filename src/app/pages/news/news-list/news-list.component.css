@@ -1,0 +1,50 @@
+:host {
+  
+}
+
+ul {
+  list-style: none;
+  margin: 20px auto; 
+  width: 80%; 
+}
+
+li {
+  display: flex;
+  justify-content: stretch; 
+
+  padding: 10px;
+  border: solid 1px black;
+}
+
+li > * ~ * {
+  margin-left: 10px;
+}
+
+li > img {
+  width: 100px;
+  height: 100px;
+}
+
+li > .content {
+  flex-grow: 1;
+}
+
+li > .content > .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+li > .actions {
+  display: flex;
+  flex-direction: column;
+  
+  margin: auto 0;
+  width: 150px;
+}
+
+li > .actions > * ~ * {
+  margin-top: 10px;
+}
+
