@@ -1,0 +1,15 @@
+<img class="poster" />
+<div class="content">
+  <h1>{{ news.heading }}</h1>
+  <p class="text">{{ news.content }}</p>
+  <div>
+    Date: <span>{{ news.date.toLocaleDateString() }}</span>
+  </div>
+  <div>
+    Author: <span>{{ news.author }}</span>
+  </div>
+</div>
+<div class="actions">
+  <button (click)="onEdit()">Edit</button>
+  <button (click)="onDelete()" *ngIf="canDelete">Delete</button>
+</div>

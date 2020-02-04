@@ -1,0 +1,71 @@
+<form [formGroup]="form">
+  <!-- First column -->
+  <div class="column">
+    <div class="row small">
+      <label for="heading">Heading</label>
+      <input name="heading" formControlName="heading" />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          form.controls['heading'].invalid && form.controls['heading'].touched
+        "
+      >
+        Required
+      </div>
+    </div>
+    <div class="row small">
+      <label for="shortDiscription">Short discription</label>
+      <input name="shortDiscription" formControlName="shortDiscription" />
+    </div>
+    <div class="row large">
+      <label for="content">Content</label>
+      <textarea name="content" formControlName="content" rows="10"></textarea>
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          form.controls['content'].invalid && form.controls['content'].touched
+        "
+      >
+        Required
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="row small">
+      <div>
+        <label for="imageUrl">Image</label>
+        <span>
+          <label>
+            <input type="radio" value="url" formControlName="urlType" />
+            <span>URL</span>
+          </label>
+          <label>
+            <input type="radio" value="file" formControlName="urlType" />
+            <span>File</span>
+          </label>
+        </span>
+      </div>
+      <input
+        type="url"
+        name="imageUrl"
+        formControlName="imageUrl"
+        *ngIf="isUrl()"
+      />
+      <input
+        type="file"
+        name="imageUrl"
+        formControlName="imageUrl"
+        *ngIf="!isUrl()"
+      />
+    </div>
+    <div class="row small">
+      <label for="author">Author</label>
+      <input name="author" formControlName="author" />
+    </div>
+    <div class="actions large">
+      <button (click)="onSubmit()">Save</button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</form>

@@ -1,6 +1,7 @@
 :root {
   // colors
-  --bg-color: gray;
+  --border-color: black;
+  --bg-color: lightgray;
   // sizes
   --footer-height: 50px;
 }
@@ -18,4 +19,9 @@ html,
 body {
   height: 100%;
   position: relative;
+}
+
+.container {
+  width: 80vw;
+  margin: 20px auto;
 }
