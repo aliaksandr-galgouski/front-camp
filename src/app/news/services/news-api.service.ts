@@ -25,18 +25,6 @@ interface ArticleResponse extends IApiResponse {
 })
 export class NewsApiService {
   localArticles: Article[] = [];
-
-  createOrUpdateArticle(article: Article) {
-    if (article.id) {
-    }
-  }
-  deleteArticle(id: number) {
-    throw new Error('Method not implemented.');
-  }
-  getArticleById(id: number): Article | PromiseLike<Article> {
-    const article = this.localArticles.find(a => a.id === id);
-    return Promise.resolve(article);
-  }
   apiUrl = 'https://newsapi.org/v2';
 
   constructor(private http: HttpClient) {}
@@ -73,5 +61,33 @@ export class NewsApiService {
       .get<ArticleResponse>(`${this.apiUrl}/top-headlines`, { params })
       .pipe(map(response => response.articles))
       .toPromise();
+  }
+
+  createOrUpdateArticle(article: Article) {
+    if (article.id) {
+      const index = this.localArticles.findIndex(a => a.id === article.id);
+      if (index >= 0) {
+        this.localArticles[index] = article;
+      } else {
+        return Promise.reject();
+      }
+    } else {
+      article.id = this.localArticles.length;
+      this.localArticles.push(article);
+    }
+
+    return Promise.resolve(article.id);
+  }
+  deleteArticle(id: number) {
+    const index = this.localArticles.findIndex(a => a.id === id);
+    if (index >= 0) {
+      this.localArticles.splice(index, 1);
+      return Promise.resolve();
+    }
+    return Promise.reject();
+  }
+  getArticleById(id: number): Article | PromiseLike<Article> {
+    const article = this.localArticles.find(a => a.id === id);
+    return Promise.resolve(article);
   }
 }
