@@ -1,29 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewsRoutingModule } from './news-routing.module';
+// modules
 import { SharedModule } from '../shared/shared.module';
 
-import { NewsRoutingModule } from './news-routing.module';
-import { NewsComponent } from './pages/news/news.component';
-import { NewsReadComponent } from './pages/news-read/news-read.component';
-import { NewsEditComponent } from './pages/news-edit/news-edit.component';
-import { NewsCreateComponent } from './pages/news-create/news-create.component';
-import { NewsArticleShortComponent } from './components/news-article-short/news-article-short.component';
-import { NewsArticleFullComponent } from './components/news-article-full/news-article-full.component';
-import { NewsToolbarComponent } from './components/news-toolbar/news-toolbar.component';
-import { NewsFormComponent } from './components/news-form/news-form.component';
+// components
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ArticleComponent } from './components/article/article.component';
+import { ListPageComponent } from './pages/list-page/list-page.component';
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import { ArticleFormComponent } from './components/article-form/article-form.component';
+import { ReadPageComponent } from './pages/read-page/read-page.component';
 
 @NgModule({
   declarations: [
-    NewsComponent,
-    NewsReadComponent,
-    NewsEditComponent,
-    NewsCreateComponent,
-    NewsArticleShortComponent,
-    NewsArticleFullComponent,
-    NewsToolbarComponent,
-    NewsFormComponent
+    ToolbarComponent,
+    ArticleComponent,
+    ListPageComponent,
+    EditPageComponent,
+    ArticleFormComponent,
+    ReadPageComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, SharedModule, NewsRoutingModule]
+  imports: [CommonModule, ReactiveFormsModule, NewsRoutingModule, SharedModule],
+  entryComponents: [ArticleComponent]
 })
 export class NewsModule {}

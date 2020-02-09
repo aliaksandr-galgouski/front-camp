@@ -1,0 +1,8 @@
+<app-sub-header [text]="subHeaderText"></app-sub-header>
+<div class="container" *ngIf="article">
+  <app-article
+    [article]="article"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  ></app-article>
+</div>

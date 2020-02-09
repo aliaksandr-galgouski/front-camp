@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input
-} from '@angular/core';
+import { Input, Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-sub-header',
@@ -11,10 +6,6 @@ import {
   styleUrls: ['./sub-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SubHeaderComponent implements OnInit {
+export class SubHeaderComponent {
   @Input() text: string;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

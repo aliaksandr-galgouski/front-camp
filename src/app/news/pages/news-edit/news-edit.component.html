@@ -1,8 +1,0 @@
-<app-sub-header text="Edit"></app-sub-header>
-<div class="container" *ngIf="news">
-  <app-news-form
-    [news]="news"
-    (saveClick)="onSave($event)"
-    (cancelClick)="onCancel()"
-  ></app-news-form>
-</div>

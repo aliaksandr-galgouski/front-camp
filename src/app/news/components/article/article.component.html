@@ -1,0 +1,31 @@
+<img class="poster" />
+
+<div class="content" [ngSwitch]="displayType">
+  <ng-container *ngSwitchCase="'full'">
+    <h1>{{ article.title }}</h1>
+    <p class="text">{{ article.content }}</p>
+    <p>
+      Date: <span>{{ article.publishedAt | date }}</span>
+    </p>
+    <p>
+      Author: <span>{{ article.author }}</span>
+    </p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'short'">
+    <div>
+      <h3>{{ article.title }}</h3>
+      <div>
+        Date: <span>{{ article.publishedAt | date }}</span>
+      </div>
+    </div>
+    <p class="lines">{{ article.description }}</p>
+    <a href="javascript: void(0)" (click)="onReadMore()">Read More</a>
+  </ng-container>
+</div>
+
+<div class="actions">
+  <ng-container *ngIf="editable">
+    <button (click)="onEdit()">Edit</button>
+    <button (click)="onDelete()">Delete</button>
+  </ng-container>
+</div>

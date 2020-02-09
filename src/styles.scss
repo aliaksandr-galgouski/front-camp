@@ -21,6 +21,29 @@ body {
   position: relative;
 }
 
+input,
+select,
+textarea {
+  padding: 6px;
+  border: solid 1px var(--border-color);
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin: 0 5px;
+}
+
+button {
+  margin: 0 5px;
+  padding: 6px 10px;
+
+  font-weight: bold;
+
+  border: solid 1px var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+}
+
 .container {
   width: 80vw;
   margin: 20px auto;

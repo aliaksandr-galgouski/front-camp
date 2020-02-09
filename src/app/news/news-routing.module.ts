@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NewsComponent } from './pages/news/news.component';
-import { NewsReadComponent } from './pages/news-read/news-read.component';
-import { NewsEditComponent } from './pages/news-edit/news-edit.component';
-import { NewsCreateComponent } from './pages/news-create/news-create.component';
+// pages
+import { ListPageComponent } from './pages/list-page/list-page.component';
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import { ReadPageComponent } from './pages/read-page/read-page.component';
 
 const routes: Routes = [
   {
     path: 'news',
     children: [
-      { path: 'create', component: NewsCreateComponent },
-      { path: '', pathMatch: 'full', component: NewsComponent }
-    ]
-  },
-  {
-    path: 'news/:id',
-    children: [
-      { path: 'edit', component: NewsEditComponent },
-      { path: '', pathMatch: 'full', component: NewsReadComponent }
+      { path: 'list', component: ListPageComponent },
+      { path: 'create', component: EditPageComponent },
+      {
+        path: ':id',
+        children: [
+          { path: 'read', component: ReadPageComponent },
+          { path: 'edit', component: EditPageComponent },
+
+          { path: '', pathMatch: 'full', redirectTo: '/news' }
+        ]
+      },
+
+      { path: '', pathMatch: 'full', redirectTo: 'list' }
     ]
   }
 ];
