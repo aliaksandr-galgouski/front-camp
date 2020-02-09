@@ -1,0 +1,13 @@
+<app-sub-header [text]="selectedSource?.name || '-'"></app-sub-header>
+<app-toolbar
+  [sources]="sources"
+  (addArticle)="onAddArticle()"
+  (filterChange)="onFilterChanged($event)"
+  (sourceChange)="onSourceChanged($event)"
+></app-toolbar>
+<div class="container">
+  <ng-template #container></ng-template>
+  <div class="load-btn" *ngIf="articles?.length" (click)="onLoadMore()">
+    <h2>Load more</h2>
+  </div>
+</div>

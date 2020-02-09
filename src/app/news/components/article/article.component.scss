@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+  > * {
+    margin: 10px;
+  }
+
+  &,
+  > .poster {
+    border: solid 1px var(--border-color);
+  }
+
+  > .poster {
+    min-width: 100px;
+    min-height: 100px;
+    width: 100px;
+    height: 100px;
+  }
+
+  > .content {
+    flex-grow: 1;
+  }
+
+  > .actions {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    margin: 10px;
+
+    > button ~ button {
+      margin-top: 10px;
+    }
+  }
+}

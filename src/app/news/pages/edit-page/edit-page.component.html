@@ -1,0 +1,8 @@
+<app-sub-header [text]="subHeaderText"></app-sub-header>
+<div class="container" *ngIf="article">
+  <app-article-form
+    [article]="article"
+    (formCancel)="onCancel()"
+    (formSubmit)="onSubmit($event)"
+  ></app-article-form>
+</div>

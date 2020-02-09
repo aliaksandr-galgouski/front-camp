@@ -1,0 +1,13 @@
+.main-container {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: calc(var(--footer-height) + 20px);
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+  }
+}

@@ -1,0 +1,17 @@
+<select [formControl]="source">
+  <option *ngFor="let option of sources" [ngValue]="option">{{
+    option.name
+  }}</option>
+</select>
+
+<div>
+  <input type="text" [formControl]="filter" />
+  <button type="button" (click)="onFilterChanged()">Filter</button>
+</div>
+
+<label>
+  <input type="checkbox" />
+  <span>Only created by me</span>
+</label>
+
+<button type="button" (click)="onAddArticle()">Add News</button>
